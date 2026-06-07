@@ -4,13 +4,13 @@ import { useState } from "react";
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
-const categories = ["全部", ...Array.from(new Set(products.map((p) => p.category)))];
+const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState("全部");
 
   const filtered =
-    activeCategory === "全部"
+    activeCategory === "All"
       ? products
       : products.filter((p) => p.category === activeCategory);
 
